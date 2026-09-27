@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">
+    <h2>Passport Portal</h2>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+    </div>
+</div>
+
+
+<div class="form-container">
+
+    <h2>Create Applicant Account</h2>
+
+    <form method="POST">
+
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+
+        <label>Phone</label>
+        <input type="text" name="phone" required>
+
+
+        <label>Date of Birth</label>
+        <input type="date" name="dob" required>
+
+
+        <label>Address</label>
+        <textarea name="address" required></textarea>
+
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

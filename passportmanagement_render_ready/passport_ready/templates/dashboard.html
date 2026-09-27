@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Applicant Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h2>Passport Portal</h2>
+
+    <div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</div>
+
+
+<div class="dashboard">
+
+    <h1>Welcome, {{ session["name"] }}</h1>
+
+    <p>
+        Manage your passport applications here.
+    </p>
+
+
+    <a href="/apply">
+        <button>New Passport Application</button>
+    </a>
+    
+    <a href="/documents">
+    <button>Manage Documents</button>
+</a>
+
+    <h2>Your Applications</h2>
+
+
+    <table>
+
+        <tr>
+            <th>Application ID</th>
+            <th>Passport Type</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+
+
+        {% for application in applications %}
+
+        <tr>
+
+            <td>
+                APP{{ application["application_id"] }}
+            </td>
+
+            <td>
+                {{ application["passport_type"] }}
+            </td>
+
+            <td>
+                {{ application["application_date"] }}
+            </td>
+
+            <td>
+                {{ application["status"] }}
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Passport Application</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h2>Passport Portal</h2>
+
+    <div>
+
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</div>
+
+
+<div class="form-container">
+
+    <h2>Passport Application</h2>
+
+    <p class="form-description">
+        Select the type of passport application you want to submit.
+    </p>
+
+
+    <form method="POST">
+
+        <label>Passport Type</label>
+
+        <select name="passport_type" required>
+
+            <option value="">
+                Select Passport Type
+            </option>
+
+            <option value="Fresh">
+                Fresh Passport
+            </option>
+
+            <option value="Reissue">
+                Passport Reissue
+            </option>
+
+        </select>
+
+
+        <button type="submit">
+            Submit Application
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

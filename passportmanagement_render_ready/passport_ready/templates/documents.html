@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Documents</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h2>Passport Portal</h2>
+
+    <div>
+
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</div>
+
+
+<div class="form-container">
+
+    <h2>Add Document</h2>
+
+    <form method="POST">
+
+        <label>Select Application</label>
+
+        <select name="application_id" required>
+
+            <option value="">
+                Select Application
+            </option>
+
+            {% for application in applications %}
+
+            <option value="{{ application['application_id'] }}">
+
+                APP{{ application['application_id'] }}
+                - {{ application['passport_type'] }}
+
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+
+        <label>Document Type</label>
+
+        <select name="document_type" required>
+
+            <option value="">
+                Select Document
+            </option>
+
+            <option value="Aadhaar Card">
+                Aadhaar Card
+            </option>
+
+            <option value="Address Proof">
+                Address Proof
+            </option>
+
+            <option value="Birth Certificate">
+                Birth Certificate
+            </option>
+
+            <option value="PAN Card">
+                PAN Card
+            </option>
+
+        </select>
+
+
+        <label>Document Number</label>
+
+        <input type="text"
+               name="document_number"
+               placeholder="Enter document number"
+               required>
+
+
+        <button type="submit">
+            Add Document
+        </button>
+
+    </form>
+
+</div>
+
+
+<div class="dashboard">
+
+    <h2>Your Submitted Documents</h2>
+
+
+    {% if documents %}
+
+    <table>
+
+        <tr>
+
+            <th>Application</th>
+            <th>Document Type</th>
+            <th>Document Number</th>
+            <th>Status</th>
+
+        </tr>
+
+
+        {% for document in documents %}
+
+        <tr>
+
+            <td>
+                APP{{ document['application_id'] }}
+            </td>
+
+            <td>
+                {{ document['document_type'] }}
+            </td>
+
+            <td>
+                {{ document['document_number'] }}
+            </td>
+
+            <td>
+                {{ document['verification_status'] }}
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+
+    <p>No documents submitted yet.</p>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passport Application System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h2>Passport Portal</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/admin/login">Admin Login</a>
+        </div>
+    </div>
+
+
+    <div class="hero">
+
+        <h1>Passport Application Management System</h1>
+
+        <p>
+            Apply for your passport and track your application
+            easily through our online portal.
+        </p>
+
+        <a href="/register">
+            <button>Apply Now</button>
+        </a>
+
+    </div>
+
+
+    <div class="features">
+
+        <div class="card">
+            <h3>Easy Application</h3>
+            <p>Submit your passport application online.</p>
+        </div>
+
+        <div class="card">
+            <h3>Track Status</h3>
+            <p>Check the current status of your application.</p>
+        </div>
+
+        <div class="card">
+            <h3>Document Management</h3>
+            <p>Submit and view your document details.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

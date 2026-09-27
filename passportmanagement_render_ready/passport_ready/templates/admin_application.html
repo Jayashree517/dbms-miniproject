@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Manage Application</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h2>Passport Admin Portal</h2>
+
+    <div>
+
+        <a href="/admin/dashboard">
+            Dashboard
+        </a>
+
+        <a href="/admin/logout">
+            Logout
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="form-container">
+
+    <h2>Application Details</h2>
+
+
+    <p>
+        <strong>Application ID:</strong>
+        APP{{ application["application_id"] }}
+    </p>
+
+
+    <p>
+        <strong>Applicant:</strong>
+        {{ application["name"] }}
+    </p>
+
+
+    <p>
+        <strong>Email:</strong>
+        {{ application["email"] }}
+    </p>
+
+
+    <p>
+        <strong>Phone:</strong>
+        {{ application["phone"] }}
+    </p>
+
+
+    <p>
+        <strong>Passport Type:</strong>
+        {{ application["passport_type"] }}
+    </p>
+
+
+    <p>
+        <strong>Current Status:</strong>
+        {{ application["status"] }}
+    </p>
+
+
+    <hr>
+
+
+    <h3>Update Application Status</h3>
+
+
+    <form method="POST">
+
+        <label>Status</label>
+
+        <select name="status" required>
+
+            <option value="Submitted"
+                {% if application["status"] == "Submitted" %}
+                selected
+                {% endif %}>
+                Submitted
+            </option>
+
+
+            <option value="Under Verification"
+                {% if application["status"] == "Under Verification" %}
+                selected
+                {% endif %}>
+                Under Verification
+            </option>
+
+
+            <option value="Approved"
+                {% if application["status"] == "Approved" %}
+                selected
+                {% endif %}>
+                Approved
+            </option>
+
+
+            <option value="Rejected"
+                {% if application["status"] == "Rejected" %}
+                selected
+                {% endif %}>
+                Rejected
+            </option>
+
+        </select>
+
+
+        <button type="submit">
+            Update Status
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h2>Passport Admin Portal</h2>
+
+    <div>
+        <a href="/admin/dashboard">Dashboard</a>
+        <a href="/admin/logout">Logout</a>
+    </div>
+
+</div>
+
+
+<div class="dashboard">
+
+    <h1>Admin Dashboard</h1>
+
+    <p>
+        Welcome, {{ session["admin_username"] }}
+    </p>
+
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <h3>Total Applications</h3>
+
+            <p>{{ total_applications }}</p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3>Submitted</h3>
+
+            <p>{{ submitted }}</p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3>Approved</h3>
+
+            <p>{{ approved }}</p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3>Rejected</h3>
+
+            <p>{{ rejected }}</p>
+
+        </div>
+
+    </div>
+
+
+    <h2>All Applications</h2>
+
+
+    <table>
+
+        <tr>
+
+            <th>Application ID</th>
+            <th>Applicant</th>
+            <th>Passport Type</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+
+        </tr>
+
+
+        {% for application in applications %}
+
+        <tr>
+
+            <td>
+                APP{{ application["application_id"] }}
+            </td>
+
+            <td>
+                {{ application["name"] }}
+            </td>
+
+            <td>
+                {{ application["passport_type"] }}
+            </td>
+
+            <td>
+                {{ application["application_date"] }}
+            </td>
+
+            <td>
+                {{ application["status"] }}
+            </td>
+
+            <td>
+
+                <a href="/admin/application/{{ application['application_id'] }}">
+
+                    <button>
+                        Manage
+                    </button>
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+
+</html>

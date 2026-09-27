@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #222;
+}
+
+.navbar {
+    background: #1e3a5f;
+    color: white;
+    padding: 18px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #1e3a5f;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+button {
+    background: #1e3a5f;
+    color: white;
+    border: none;
+
+    padding: 12px 25px;
+    border-radius: 6px;
+
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #142942;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px;
+}
+
+.card {
+    background: white;
+    width: 260px;
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+    text-align: center;
+}
+
+.card h3 {
+    color: #1e3a5f;
+    margin-bottom: 10px;
+}
+.form-container {
+    width: 450px;
+    margin: 50px auto;
+
+    background: white;
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1e3a5f;
+}
+
+.form-container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container textarea {
+    height: 80px;
+    resize: none;
+}
+
+.form-container button {
+    margin-top: 20px;
+    width: 100%;
+}
+.dashboard {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.dashboard h1 {
+    color: #1e3a5f;
+    margin-bottom: 10px;
+}
+
+.dashboard h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #1e3a5f;
+    color: white;
+}
+.form-container select {
+    width: 100%;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    background: white;
+}
+
+.form-description {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+}
+.stats {
+    display: flex;
+    gap: 20px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: #1e3a5f;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 28px;
+    font-weight: bold;
+}
